@@ -35,17 +35,8 @@ weatherForm.addEventListener("submit", (e) => {
       regionDiv.textContent = region;
       conditionDiv.textContent = conditionText;
       conditionIconImg.src = conditionIconUrl;
-      tempDiv.textContent = temp;
+      tempDiv.textContent = temp + "C";
 
       outputContainerDiv.classList.remove("hide");
-
-      console.log({
-        country,
-        cityName,
-        region,
-        conditionText,
-        conditionIconUrl,
-        temp,
-      });
     });
 });
