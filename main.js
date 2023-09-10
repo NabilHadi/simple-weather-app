@@ -1,4 +1,11 @@
 console.log("hello world!");
+const outputContainerDiv = document.getElementById("output_container");
+const countryNameDiv = document.getElementById("country_name");
+const cityNameDiv = document.getElementById("city_name_output");
+const regionDiv = document.getElementById("region");
+const conditionDiv = document.getElementById("condition");
+const conditionIconImg = document.getElementById("conditionIcon");
+const tempDiv = document.getElementById("temp");
 
 const weatherForm = document.getElementById("weather_form");
 weatherForm.addEventListener("submit", (e) => {
@@ -22,6 +29,15 @@ weatherForm.addEventListener("submit", (e) => {
       const conditionText = jsonData.current.condition.text;
       const conditionIconUrl = jsonData.current.condition.icon;
       const temp = jsonData.current.temp_c;
+
+      countryNameDiv.textContent = country;
+      cityNameDiv.textContent = cityName;
+      regionDiv.textContent = region;
+      conditionDiv.textContent = conditionText;
+      conditionIconImg.src = conditionIconUrl;
+      tempDiv.textContent = temp;
+
+      outputContainerDiv.classList.remove("hide");
 
       console.log({
         country,
